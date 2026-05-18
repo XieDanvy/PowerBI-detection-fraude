@@ -13,7 +13,7 @@ Le projet s'appuie sur le dataset **PaySim**, une simulation de transactions mob
 > **[Cliquez ici pour télécharger le fichier Power BI (.pbix)](https://drive.google.com/file/d/1KmY8UfR4VfEUJrRVwEfiGDZnZkJY2Q1v/view?usp=sharing)** > *(Note : Le fichier est hébergé sur Google Drive en raison de sa taille de 388 Mo, ce qui dépasse la limite d'envoi direct de GitHub).*
 
 <img width="1528" height="855" alt="Capture d&#39;écran 2026-05-19 003603" src="https://github.com/user-attachments/assets/c7539315-5b1d-429a-bfd6-f510788574aa" />
---
+---
 
 ## Architecture Technique (Stack)
 La solution a été pensée pour simuler un environnement de production d'entreprise :
