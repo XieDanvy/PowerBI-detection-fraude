@@ -10,7 +10,7 @@ Le projet s'appuie sur le dataset **PaySim**, une simulation de transactions mob
 ---
 
 ## TELECHARGER LE PROJET
-> **[Cliquez ici pour télécharger le fichier Power BI (.pbix)](https://drive.google.com/file/d/1KmY8UfR4VfEUJrRVwEfiGDZnZkJY2Q1v/view?usp=sharing)** > *(Note : Le fichier est hébergé sur Google Drive en raison de sa taille de 388 Mo, ce qui dépasse la limite d'envoi direct de GitHub).*
+> **[Cliquez ici pour télécharger le fichier Power BI (.pbix)](https://drive.google.com/file/d/1KmY8UfR4VfEUJrRVwEfiGDZnZkJY2Q1v/view?usp=sharing)**  *(Note : Le fichier est hébergé sur Google Drive en raison de sa taille de 388 Mo, ce qui dépasse la limite d'envoi direct de GitHub).*
 
 <img width="1528" height="855" alt="Capture d&#39;écran 2026-05-19 003603" src="https://github.com/user-attachments/assets/c7539315-5b1d-429a-bfd6-f510788574aa" />
 
@@ -20,8 +20,8 @@ La solution a été pensée pour simuler un environnement de production d'entrep
 * **Base de Données Relationnelle :** `PostgreSQL` (Stockage massif, indexation et requêtage optimal).
 * **Administration DB :** `pgAdmin 4`.
 * **ETL & Préparation :** `Power Query` (Connexion sécurisée, filtrage, typage et création de dimensions).
-* **Modélisation :** Schéma en Étoile (*Star Schema*).
-* **Langage de Calcul :** `DAX` (*Data Analysis Expressions*) pour la création de mesures d'intelligence analytique.
+* **Modélisation :** Schéma en Étoile.
+* **Langage de Calcul :** `DAX` pour la création de mesures d'intelligence analytique.
 * **Restitution / Restitutions Visuelles :** `Power BI Desktop`.
 
 ---
@@ -37,7 +37,7 @@ La solution a été pensée pour simuler un environnement de production d'entrep
 Afin de ne pas surcharger la mémoire de l'application et de respecter les bonnes pratiques de la Business Intelligence, le jeu de données brut a été scindé en un **Schéma en Étoile** :
 * **`Fact_Transactions` (Table de Faits) :** Contient les informations quantitatives (montants, soldes initiaux/finaux de l'émetteur et du destinataire) et les clés de liaison. Les colonnes inutiles comme `isFlaggedFraud` ont été supprimées pour optimiser la compression.
 * **`Dim_Type_Transaction` (Table de Dimension) :** Table normalisée isolant les types uniques de transactions (`TRANSFER`, `CASH_OUT`, `PAYMENT`, `DEBIT`, `CASH_IN`).
-* **`Dim_Temps` (Table de Dimension) :** Générée via un script de code **M** personnalisé dans Power Query afin de convertir les blocs temporels bruts (`step`) en données analytiques exploitables :
+* **`Dim_Temps` (Table de Dimension) :** Générée via un script personnalisé dans Power Query afin de convertir les blocs temporels bruts (`step`) en données analytiques exploitables :
     * Heure réelle de la journée (de 0h à 23h).
     * Jour chronologique du projet (de 1 à 31 jours).
     * Segmentation par tranches horaires cognitives (Nuit, Matin, Après-midi, Soirée).
